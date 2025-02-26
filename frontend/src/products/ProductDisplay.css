@@ -1,0 +1,170 @@
+/* Center the product display inside a box */
+.product-display-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 80vh; /* Full viewport height */
+    background-color: #292828; /* Light background like reference */
+  }
+  
+  /* Box around the product details */
+  .product-display {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    width: 1000px; /* Fixed width for layout */
+    background: rgb(200, 161, 161);
+    border-radius: 10px;
+    box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.1);
+    padding: 30px;
+  }
+  
+  /* Product Image Section */
+  .image-section {
+    width: 45%;
+    text-align: center;
+  }
+  
+  .image-section img {
+    width: 100%;
+    max-width: 400px;
+    border-radius: 10px;
+  }
+  
+  /* Product Details Section */
+  .details-section {
+    width: 50%;
+    padding-left: 30px;
+  }
+  
+  .details-section h2 {
+    font-size: 26px;
+    font-weight: bold;
+    margin-bottom: 10px;
+  }
+  
+  .description {
+    font-size: 16px;
+    color: #090909;
+    margin-bottom: 15px;
+  }
+  
+  .price {
+    font-size: 22px;
+    font-weight: bold;
+    color: #1a1919;
+    margin-bottom: 15px;
+  }
+  
+  /* Quantity Selector */
+  .quantity-controls {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 20px;
+  }
+  
+  .quantity-controls button {
+    background-color: #e36e15;
+    color: black;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    border-radius: 5px;
+    font-size: 18px;
+    width: 40px;
+  }
+  
+  .quantity-controls button:disabled {
+    background-color: #fc6027;
+    cursor: not-allowed;
+  }
+  
+  .quantity-controls span {
+    font-size: 18px;
+    font-weight: bold;
+    text-align: center;
+    width: 30px;
+  }
+  
+  /* Add to Cart Button */
+  .add-to-cart {
+    background-color: #e76f33;
+    color: black;
+    border: none;
+    padding: 12px 20px;
+    cursor: pointer;
+    font-size: 18px;
+    border-radius: 5px;
+    transition: 0.3s;
+    width: 180px;
+  }
+  
+  .add-to-cart:hover {
+    background-color: #f56710;
+  }
+  
+  /* Tab Navigation */
+  .tabs {
+    display: flex;
+    border-bottom: 2px solid #2c2b2b;
+    margin-top: 20px;
+  }
+  
+  .tab {
+    padding: 10px 15px;
+    cursor: pointer;
+    font-weight: bold;
+    color: #141313;
+    border-bottom: 2px solid transparent;
+    transition: 0.3s;
+  }
+  
+  .tab.active {
+    border-bottom: 2px solid #f26c19;
+  }
+  
+  .tab-content {
+    margin-top: 15px;
+    font-size: 14px;
+    color: #151414;
+  }
+  
+  /* Close Button (❌) - Inside a Circle */
+  .close-button {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    width: 35px;
+    height: 35px;
+    border-radius: 50%; /* Makes it a circle */
+    background-color: #e80a0a; /* Red background */
+    color: white;
+    border: none;
+    font-size: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: 0.3s;
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.2);
+  }
+  
+  /* Hover effect */
+  .close-button:hover {
+    background-color: #cc0000; /* Darker red */
+  }
+  
+  /* Fix Positioning Inside the Box */
+  .product-display {
+    position: relative; /* Needed for absolute positioning of close button */
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    width: 1000px; /* Fixed width */
+    background: rgb(195, 192, 192);
+    border-radius: 10px;
+    box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.1);
+    padding: 30px;
+  }
+  

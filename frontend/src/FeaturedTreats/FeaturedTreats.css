@@ -1,0 +1,30 @@
+/* Featured Section Styling */
+.featured-section {
+    text-align: center;
+  }
+  
+  /* Title Styling */
+  .featured-title {
+    font-size: 2.5rem;
+    font-weight: bold;
+    margin-bottom: 20px;
+    color: white;
+  }
+  
+  /* Grid Layout */
+  .featured-grid {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    padding: 0 5%;
+    flex-wrap: wrap;
+  }
+  
+  /* Image Styling - Make Images Wider */
+  .featured-card img {
+    width: 220px;  /* ✅ Increase width */
+    height: 380px; /* ✅ Keep a balanced height */
+    object-fit: cover; /* ✅ Maintain aspect ratio */
+    border-radius: 12px;
+  }
+  
