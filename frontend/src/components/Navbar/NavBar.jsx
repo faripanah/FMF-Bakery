@@ -5,6 +5,8 @@ import { FaUserLarge } from "react-icons/fa6";
 import { Link } from "react-router-dom";
 
 const Navbar = () => {
+    const user = false;
+    const isAdmin = true;
     return(
         <header className='navbar'>
             <div className='logo'>
@@ -16,7 +18,10 @@ const Navbar = () => {
                     <li><Link to="/" >Menu</Link></li>
                     <li><Link to="/" >Contact Us</Link></li>
                     <li><Link to="/" >Find Store</Link></li>
+                  
                 </ul>
+                {isAdmin && <Link to={"/secret-dashboard"}> Dashboard </Link>}
+               
             </nav>
               {/* Icons Section */}
               <div className="icons">

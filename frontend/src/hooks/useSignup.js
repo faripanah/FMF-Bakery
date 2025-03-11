@@ -3,47 +3,46 @@
 //Navigate the user to homepage or different page after successful signup
 
 import { useState } from "react";
-import {useNavigate} from "react-router-dom";
+import { toast } from "react-toastify";
+import 'react-toastify/dist/ReactToastify.css';
 
-const useSignup = function (setIsAuthenticated){
-    const [name, setName] = useState("");
-    const [email, setEmail] = useState("");
-    const [address, setAddress] = useState("");
-    const [phone, setPhone] = useState("");
-    const [password, setPassword] = useState("");
-    const [confirmPassword, setConformPassword] = useState("");
-    const navigate = useNavigate();
+const useSignup = () => {
+  const [isLoading, setIsLoading] = useState(false);
 
+  const handleSignup = async ({ name, email, address, phone, password, confirmPassword, setIsAuthenticated }) => {
+    if (password !== confirmPassword) {
+      return toast.error("Passwords do not match");
+    }
 
-    const handleSignup = async () => {
-        try {
-            const response = await fetch("/api/user/signup", {
-                method: "POST",
-                body: JSON.stringify({name, email, address, phone, password, confirmPassword}), //send uservdata to API
-                headers: {
-                    "Content-Type": "application/json",
-                },
+    setIsLoading(true);
 
-            });
-            if(response.ok) {
-                const user = await response.json(); //converts the API response which is json format to js object
-                localStorage.setItem("user", JSON.stringify(user));
-                console.log("User signeg up successfully!!");
-                setIsAuthenticated(true);
-                navigate("/");
+    try {
+      const response = await fetch("/api/users/signup", {
+        method: "POST",
+        body: JSON.stringify({ name, email, address, phone, password }),
+        headers: {
+          "Content-Type": "application/json",
+        },
+      });
 
-            }else {
-                console.log("Signup failed");
-            }
-        } catch (error) {
-            console.error("Error during signup:", error);
-            
-        }
-    };
+      if (response.ok) {
+        const user = await response.json();
+        localStorage.setItem("user", JSON.stringify(user));
+        setIsAuthenticated(true); // updates the authentication state
+        toast.success("User signed up successfully!");
+      } else {
+        const error = await response.json();
+        toast.error(error.message || "Signup failed");
+      }
+    } catch (error) {
+      console.error("Error during signup:", error);
+      toast.error("An error occurred during signup");
+    } finally {
+      setIsLoading(false);
+    }
+  };
 
-    return {
-        name, email, address, phone, password, confirmPassword, handleSignup,
-    };
-
+  return { isLoading, handleSignup };
 };
+
 export default useSignup;
