@@ -15,9 +15,9 @@ const Navbar = () => {
             <nav>
                 <ul className="nav-links">
                     <li><Link to="/" >Home</Link></li>
-                    <li><Link to="/" >Menu</Link></li>
-                    <li><Link to="/" >Contact Us</Link></li>
-                    <li><Link to="/" >Find Store</Link></li>
+                    <li><Link to="/menu" >Menu</Link></li>
+                    <li><Link to="/contact" >Contact Us</Link></li>
+                    <li><Link to="/find-shop" >Find Store</Link></li>
                   
                 </ul>
                 {isAdmin && <Link to={"/secret-dashboard"}> Dashboard </Link>}
