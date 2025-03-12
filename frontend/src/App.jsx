@@ -3,7 +3,7 @@ import { useState } from "react";
 
 // pages & components
 import Navbar from "./components/Navbar/NavBar";
-
+import FindShop from "./pages/FindShop";
 //import EditJobPage from "./pages/EditJobPage";
 //import NotFoundPage from "./pages/NotFoundPage";
 import Login from "./pages/Login/Login";
@@ -55,6 +55,7 @@ const App = () => {
                   <AdminPage />: <Navigate to="/" />
               }
             />
+            <Route path="/find-shop" element={<FindShop />} />
             <Route path="*" element={<NotFoundPage />} />
           </Routes>
         </div>
