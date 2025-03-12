@@ -3,6 +3,7 @@ import styles from "./signUp.module.css";
 import useSignup from "../../hooks/useSignup";
 import { Link, useNavigate } from "react-router-dom";
 
+
 function SignUp({ setIsAuthenticated }) {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");

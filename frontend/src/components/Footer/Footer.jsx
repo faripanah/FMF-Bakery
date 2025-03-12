@@ -1,14 +1,14 @@
 import { Link } from "react-router-dom";
 import { FaFacebookF, FaPinterestP, FaWhatsapp, FaInstagram } from "react-icons/fa";
-import logo from "../assets/Images/bakerylogo.png";
-
+import logo from "../../assets/Images/bakerylogo.png";
+import styles from "./Footer.module.css"
 const Footer = () => {
   return (
-    <footer className="footer">
+    <footer className={styles.footer}>
       {/* Top section with logo & social icons */}
       <div className="footer-top">
-        <img src={logo} alt="Bakery Logo" className="footer-logo" />
-        <div className="social-icons">
+        <img src={logo} alt="Bakery Logo" className={styles.footer-logo} />
+        <div className={styles.social-icons}>
           <p>Follow us</p>
           <div className="icons">
             <FaFacebookF />
@@ -20,10 +20,10 @@ const Footer = () => {
       </div>
 
       {/* Thin separator line */}
-      <div className="footer-line"></div>
+      <div className={styles.footer-line}></div>
 
       {/* Main Footer Content */}
-      <div className="footer-container">
+      <div className={styles.footer-container}>
         <div className="footer-section">
           <h3>Contact us</h3>
           <p>(358) 789-12301</p>
@@ -32,7 +32,7 @@ const Footer = () => {
           <p>Tampere, Finland</p>
         </div>
 
-        <div className="footer-section">
+        <div className={styles.footer-section}>
           <h3>Explore</h3>
           <ul>
             <li><a href="/">Home</a></li>
@@ -41,7 +41,7 @@ const Footer = () => {
           </ul>
         </div>
 
-        <div className="footer-section">
+        <div className={styles.footer-section}>
           <h3>Find Store</h3>
           <ul>
             <li><a href="/">Career</a></li>
