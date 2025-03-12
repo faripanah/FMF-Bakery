@@ -1,0 +1,75 @@
+/* General Styles */
+.featured-treats {
+  text-align: center;
+  background-color: #737373; /* Dark background for contrast */
+  color: white;
+  padding: 40px 20px;
+}
+
+/* Section Heading */
+.featured-treats h2 {
+  font-size: 28px;
+  font-weight: bold;
+  margin-bottom: 20px;
+  text-transform: uppercase;
+}
+
+/* Flexbox Container for Treats */
+.treats-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  flex-wrap: nowrap;
+  max-width: 1200px;
+  margin: auto;
+}
+
+/* Individual Treat Card */
+.treat-card {
+  background: #333;
+  border-radius: 12px;
+  padding: 15px;
+  width: 350px;
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.treat-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 16px rgba(255, 255, 255, 0.2);
+}
+
+/* Images */
+.treat-card img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+  border-radius: 10px;
+}
+
+/* Treat Name */
+.treat-card h3 {
+  font-size: 18px;
+  margin: 10px 0 5px;
+  font-weight: bold;
+}
+
+/* Price Styling */
+.treat-card p {
+  font-size: 16px;
+  color: #ffcc00;
+  font-weight: bold;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .treats-container {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .treat-card {
+    width: 90%;
+  }
+}
