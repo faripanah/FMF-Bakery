@@ -1,0 +1,511 @@
+
+/* Navbar Styles */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+  background-color: rgba(0, 0, 0, 0.8); /* Dark background */
+  color: #fff;
+}
+
+.logo img {
+  width: 100px; /* Adjust for logo size */
+}
+
+.nav-links {
+  display: flex;
+  list-style: none;
+  gap: 1.5rem; /* Space between links */
+}
+
+.nav-links li a {
+  text-decoration: none;
+  color: #fff;
+  font-weight: bold;
+  font-size: 1rem;
+  transition: color 0.3s ease;
+}
+
+.nav-links li a:hover {
+  color: #f08a4b; /* Accent color */
+}
+
+.icons {
+  display: flex;
+  gap: 1rem;
+}
+
+.icons i {
+  color: #fff;
+  font-size: 1.5rem;
+  cursor: pointer;
+  transition: color 0.3s ease;
+}
+
+.icons i:hover {
+  color: #f08a4b; /* Accent color */
+}
+/*---------------------------------------------------*/
+/* Hero Section Styles */
+.hero {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start; /* Align content to the left */
+  padding: 2rem;
+  background-color: #1a1a1a; /* Fallback color if image is not loaded */
+  color: #fff;
+  position: relative;
+  background-image: url('../assets/Images/hero.png');
+  background-size: cover; /* Ensures the image covers the entire area */
+  background-position: center; /* Centers the image */
+  background-repeat: no-repeat;
+  height: 100vh; /* Make the hero section full screen */
+}
+
+.hero-content {
+  text-align: left; /* Align text to the left */
+  max-width: 50%; /* Control the width of the content */
+  z-index: 2;
+}
+
+.hero-subtitle {
+  font-size: 1.5rem;
+  color: #f08a4b; /* Accent color */
+  margin-bottom: 0.5rem;
+}
+
+.hero-title {
+  font-size: 3rem;
+  font-weight: bold;
+  margin-bottom: 1rem;
+  line-height: 1.2;
+}
+
+.hero-btn {
+  background-color: #f08a4b;
+  color: #fff;
+  padding: 0.8rem 1.5rem;
+  border: none;
+  border-radius: 5px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.hero-btn:hover {
+  background-color: #d47339; /* Darker accent color */
+}
+
+/* Background Overlay (Optional for style) */
+.hero::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: url("pattern-overlay.png"); /* Optional decorative overlay */
+  opacity: 0.3;
+  z-index: 1;
+}
+
+@media (max-width: 768px) {
+  .hero {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .hero-content {
+    max-width: 100%;
+    margin-bottom: 2rem;
+  }
+}
+
+
+/*---------------------------------------------*/
+/*Usellist.jsx:*/
+.person-img {
+  border-radius: 50%;
+  margin-bottom: 1rem;
+  width: 150px;
+  height: 150px;
+  object-fit: cover;
+  border: 4px solid var(--clr-grey-8);
+  box-shadow: var(--dark-shadow);
+}
+
+/*----------------------Menu, category and iteminfo components css code---*/
+.menu-container {
+  text-align: center;
+  background-color: #e0ebf5;
+  padding: 20px;
+}
+
+.menu-title {
+  font-size: 2rem;
+  font-weight: bold;
+  margin-bottom: 15px;
+}
+
+.categories-container {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.category-btn {
+  background: none;
+  border: none;
+  font-size: 1rem;
+  font-weight: bold;
+  cursor: pointer;
+  padding: 5px 10px;
+  position: relative;
+}
+
+.category-btn:hover {
+  color: #d9534f;
+}
+
+.category-btn::after {
+  content: "";
+  display: block;
+  width: 0;
+  height: 2px;
+  background: #d9534f;
+  transition: width 0.3s;
+}
+
+.category-btn:hover::after {
+  width: 100%;
+}
+
+.menu-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 15px;
+  padding: 20px;
+}
+
+.menu-item {
+  background: white;
+  border-radius: 8px;
+  overflow: hidden;
+  cursor: pointer;
+  transition: transform 0.2s ease-in-out;
+}
+
+.menu-item:hover {
+  transform: scale(1.05);
+}
+
+.menu-img {
+  width: 100%;
+  height: 150px;
+  object-fit: cover;
+}
+
+.menu-item-title {
+  padding: 10px;
+  font-size: 1.2rem;
+}
+
+.item-info-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.7);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.item-info {
+  background: white;
+  padding: 20px;
+  border-radius: 10px;
+  text-align: center;
+  width: 300px;
+  position: relative;
+}
+
+.item-info-img {
+  width: 100%;
+  border-radius: 10px;
+  margin-bottom: 10px;
+}
+
+.item-info-title {
+  font-size: 1.5rem;
+  margin-bottom: 10px;
+}
+
+.item-info-desc {
+  font-size: 1rem;
+  color: #c9a36b;
+}
+
+.item-info-price {
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: #d9534f;
+}
+
+.add-to-cart-btn {
+  background: #d9534f;
+  color: white;
+  border: none;
+  padding: 10px 15px;
+  font-size: 1rem;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-top: 10px;
+}
+
+.add-to-cart-btn:hover {
+  background: #c9302c;
+}
+
+.close-btn {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background: none;
+  border: none;
+  font-size: 1.5rem;
+  cursor: pointer;
+}
+/*---------------------- footer-------------*/
+.footer {
+  background: url('./assets/images/footer.png') no-repeat center center;
+  background-size: cover;
+  color: #c9a36b;
+  padding: 40px 0;
+  font-family: Arial, sans-serif;
+}
+
+/* Top section with logo & social icons */
+.footer-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1200px;
+  margin: 4 10 ;
+  padding: 0 20px;
+}
+
+.footer-logo {
+  width: 140px;
+  height: auto;
+  margin-left: 3rem;
+}
+
+
+
+/* Social icons */
+.social-icons {
+  display: flex;
+  gap: 15px;
+  margin-right: 3rem;
+}
+
+.social-icons i {
+  
+  font-size: 18px;
+  color: #c9a369;
+  transition: color 0.3s;
+ 
+}
+
+.social-icons i:hover {
+  color: white;
+  margin-right: 7 rem;
+}
+
+/* Thin line separator */
+.footer-line {
+  width: 100%;
+  height: 1px;
+  background-color: #c9a369;
+  margin: 20px 0;
+}
+
+/* Main footer content */
+.footer-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.footer-section {
+  flex: 1;
+  text-align: left;
+}
+
+/* Footer bottom text */
+.footer-bottom-text {
+  text-align: center;
+  margin-top: 20px;
+  font-size: 14px;
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.footer-section ul li a {
+  color: #c9a36b; /* Change to your preferred color */
+  text-decoration: none; /* Removes underline */
+  margin-top: 3rem;
+  margin-bottom: 3rem;
+  
+}
+.footer-section ul {
+  list-style: none; /* Removes bullets */
+  padding: 0;
+  
+}
+
+
+/*----------------------------------signup page-------------*/
+/* Signup Page Background */
+.signup-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background: url('./assets/Images/bg-login.jpg') no-repeat center center/cover;
+}
+
+/* Form Wrapper */
+.signup-form {
+  background: rgba(255, 255, 255, 0.95);
+  padding: 2rem;
+  border-radius: 10px;
+  box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.2);
+  width: 350px;
+  text-align: center;
+}
+
+/* Form Labels */
+.signup-form label {
+  display: block;
+  text-align: left;
+  font-weight: bold;
+  margin-top: 10px;
+}
+
+/* Input Fields */
+.input-field {
+  width: 100%;
+  padding: 10px;
+  margin-top: 5px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  font-size: 1rem;
+  outline: none;
+}
+
+/* Submit Button */
+.submit-btn {
+  width: 100%;
+  padding: 10px;
+  background: linear-gradient(90deg, #d896ff, #8a2be2);
+  border: none;
+  color: white;
+  font-size: 1rem;
+  font-weight: bold;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-top: 15px;
+  transition: background 0.3s ease-in-out;
+}
+
+.submit-btn:hover {
+  background: linear-gradient(90deg, #8a2be2, #d896ff);
+}
+
+/* Login Link */
+.login-link {
+  color: #8a2be2;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+.login-link:hover {
+  text-decoration: underline;
+}
+
+
+/*-----------------------login---------------*/
+/* styles.css */
+.login-page {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background: url('./assets/Images/bg-login.jpg') no-repeat center center fixed;
+  background-size: cover;
+}
+
+.login-container {
+  background: rgba(255, 255, 255, 0.9);
+  padding: 2rem;
+  border-radius: 10px;
+  width: 350px;
+  text-align: center;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.login-container h2 {
+  margin-bottom: 20px;
+}
+
+.login-container label {
+  display: block;
+  text-align: left;
+  font-weight: bold;
+  margin-top: 10px;
+}
+
+.login-container input {
+  width: 100%;
+  padding: 10px;
+  margin: 5px 0;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.login-container button {
+  width: 100%;
+  padding: 10px;
+  background: linear-gradient(to right, #c56cf0, #5b69e9);
+  border: none;
+  color: white;
+  font-size: 16px;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-top: 15px;
+}
+
+.login-container button:hover {
+  background: linear-gradient(to right, #b04be0, #4c59d6);
+}
+
+.login-container p {
+  margin-top: 10px;
+}
+
+.login-container .signup-link {
+  color: #5b69e9;
+  text-decoration: none;
+}
+
+.login-container .signup-link:hover {
+  text-decoration: underline;
+}
+
